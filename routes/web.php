@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 Use App\Http\Controllers\UserController;
+Use App\Http\Controllers\FreelanceController;
 
 
 /*
@@ -21,9 +22,18 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+
 Route::get('/login',[UserController::class, 'login']);
 Route::get('/register',[UserController::class, 'register']);
 Route::post('/saveaccount',[UserController::class, 'saveaccount']);
 Route::post('/loginaction',[UserController::class, 'loginaction']);
+
+Route::get('/freelancer/home',[FreelanceController::class, 'freelancehome']);
+Route::get('/freelancer/add-service',[FreelanceController::class, 'freelancehome']);
+Route::get('/freelancer/my-service',[FreelanceController::class, 'addservice']);
+Route::get('/freelancer/orders',[FreelanceController::class, 'orderservice']);
+
+
+
 
 
